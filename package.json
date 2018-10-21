@@ -33,8 +33,7 @@
   },
   "homepage": "https://github.com/kitos/react-debounce-props#readme",
   "dependencies": {
-    "lodash.debounce": "^4.0.8",
-    "lodash.omit": "^4.5.0"
+    "lodash.debounce": "^4.0.8"
   },
   "devDependencies": {
     "@types/jest": "^23.3.5",

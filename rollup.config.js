@@ -33,7 +33,7 @@ export default [
   // `file` and `format` for each target)
   {
     input: 'src/index.tsx',
-    external: ['react', 'lodash.debounce', 'lodash.omit'],
+    external: ['react', 'lodash.debounce'],
     plugins: [typescript()],
     output: [{ file: pkg.main, format: 'cjs' }, { file: pkg.module, format: 'es' }],
   },

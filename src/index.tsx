@@ -1,6 +1,5 @@
 import * as React from 'react'
 import debounce from 'lodash.debounce'
-import omit from 'lodash.omit'
 
 export type DebounceProps<T> = T & {
   wait: number
@@ -11,11 +10,15 @@ export class Debounce<T extends Object> extends React.PureComponent<DebounceProp
   debouncedSetState = debounce(this.setState, this.props.wait)
 
   componentDidUpdate() {
-    this.debouncedSetState(omit(this.props, 'children', 'wait'))
+    // had to cast to any because of https://github.com/Microsoft/TypeScript/issues/10727
+    const { children, wait, ...propsToDebounce } = this.props as any
+    this.debouncedSetState(propsToDebounce as T)
   }
 
   render() {
-    return this.props.children(this.state || omit(this.props, 'children', 'wait'))
+    // had to cast to any because of https://github.com/Microsoft/TypeScript/issues/10727
+    const { children, wait, ...propsToDebounce } = this.props as any
+    return children(this.state || (propsToDebounce as T))
   }
 }
 
