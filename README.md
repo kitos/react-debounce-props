@@ -1,4 +1,6 @@
 # react-debounce-props
+[![Build Status](https://travis-ci.com/kitos/react-debounce-props.svg?branch=master)](https://travis-ci.com/kitos/react-debounce-props)
+
 Tiny render-prop component for props debouncing
 
 ## Debounce props
