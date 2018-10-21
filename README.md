@@ -36,6 +36,8 @@ The package is avalable on `window.ReactDebounceProps`
 
 ### Debounce state
 
+This lib can easily replace [react-debounce-input](https://github.com/nkbt/react-debounce-input) cause it is more generic.
+
 ```JS
 import React from 'react'
 import ReactDOM from 'react-dom'
@@ -57,7 +59,7 @@ class App extends React.Component {
           Normal value: <b>{this.state.value}</b>
         </div>
 
-        <Debounce props={{ debouncedValue: this.state.value }} wait={250}>
+        <Debounce debouncedValue={this.state.value} wait={250}>
           {({ debouncedValue }) => (
             <div>
               Debounced value: <b>{debouncedValue}</b>
@@ -78,24 +80,54 @@ ReactDOM.render(<App />, rootElement);
 
 ### Debounce props
 
+You can also debounce props passed from parent components:
+
 ```JS
-import React from 'react'
-import ReactDOM from 'react-dom'
 import Debounce from 'react-debounce-props'
 
-class App extends React.Component {
-  state = {}
-
-  render() {
-    return null
-  }
-}
-
-
-const rootElement = document.getElementById("root");
-ReactDOM.render(<App />, rootElement);
+let MyComponent = ({ frequentlyUpdatedProp }) => (
+  <Debounce lessFrequentlyUpdatedProp={frequentlyUpdatedProp} wait={250}>
+    {({ lessFrequentlyUpdatedProp }) => (
+      <b>{lessFrequentlyUpdatedProp}!</b>
+    )}
+  </Debounce>
+)
 ```
 
-### With redux
+as well as from other *render-props* (e.g. from new [React context](https://reactjs.org/docs/context.html#consumer)):
+
+```JS
+import Debounce from 'react-debounce-props'
+
+let MyComponent = () => (
+  <SomeContextConsumer>
+    {frequentlyUpdatedProp => (
+      <Debounce lessFrequentlyUpdatedProp={frequentlyUpdatedProp} wait={250}>
+        {({ lessFrequentlyUpdatedProp }) => (
+          <b>{lessFrequentlyUpdatedProp}!</b>
+        )}
+      </Debounce>
+    )}
+  </SomeContextConsumer>
+)
+```
 
 ### High order component
+
+Cause *render-props* approach is more powerful this lib can replace HOC of [react-debounced-props](https://github.com/saltycrane/react-debounced-props) as well.
+
+Use `withDebouncedProps` for that:
+
+```JS
+import { withDebouncedProps } from 'react-debounce-props'
+
+const MyDebouncedComponent = withDebouncedProps(
+  { frequentlyUpdatedProp: 42 }, 200
+)(MyComponent);
+```
+
+## Useful links
+
+[Use a Render Prop!](https://cdb.reacttraining.com/use-a-render-prop-50de598f11ce)
+
+[downshift](https://github.com/paypal/downshift) 🏎
