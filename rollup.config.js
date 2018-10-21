@@ -9,7 +9,7 @@ export default [
   {
     input: 'src/index.tsx',
     output: {
-      name: 'reactDebounceProps',
+      name: 'ReactDebounceProps',
       file: pkg.browser,
       format: 'umd',
       exports: 'named',
