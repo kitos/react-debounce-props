@@ -7,5 +7,9 @@ sudo: false
 install: npm ci
 
 script:
+  - npm install codecov -g
   - npm run build
   - npm test
+
+after_success:
+  - codecov

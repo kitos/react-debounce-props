@@ -61,6 +61,7 @@
         "tsConfig": "tsconfig.json"
       }
     },
-    "testEnvironment": "node"
+    "testEnvironment": "node",
+    "collectCoverage": true
   }
 }

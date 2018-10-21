@@ -1,4 +1,5 @@
 # react-debounce-props
+[![npm version](https://badge.fury.io/js/react-debounce-props.svg)](https://badge.fury.io/js/react-debounce-props)
 [![Build Status](https://travis-ci.com/kitos/react-debounce-props.svg?branch=master)](https://travis-ci.com/kitos/react-debounce-props)
 
 Tiny render-prop component for props debouncing
