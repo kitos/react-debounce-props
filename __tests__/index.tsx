@@ -7,7 +7,7 @@ describe('index', () => {
     it('should render at least', () =>
       expect(
         create(
-          <Debounce props={{ test: 42 }} wait={0}>
+          <Debounce test={42} wait={0}>
             {({ test }) => <div>{test}</div>}
           </Debounce>,
         ).toJSON(),
