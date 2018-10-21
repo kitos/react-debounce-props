@@ -5,9 +5,8 @@
     "allowSyntheticDefaultImports": true,
     "target": "es2015",
     "outDir": "dist",
-    "declaration": true
+    "declaration": true,
+    "jsx": "preserve"
   },
-  "include": [
-    "src/**/*"
-  ]
+  "include": ["src/**/*"]
 }

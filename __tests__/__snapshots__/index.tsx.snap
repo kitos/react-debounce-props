@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`index HOC should render at least 1`] = `
+<div>
+  42
+</div>
+`;
+
+exports[`index render-props should render at least 1`] = `
+<div>
+  42
+</div>
+`;
