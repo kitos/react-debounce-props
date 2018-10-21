@@ -9,10 +9,7 @@
   "typings": "dist/index.d.ts",
   "files": [
     "README.md",
-    "index.js",
-    "index.d.ts",
-    "cjs/",
-    "umd/"
+    "dist/"
   ],
   "scripts": {
     "release": "npm run build && npm version patch && npm publish && git push --tags",
