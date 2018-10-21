@@ -79,7 +79,7 @@ const rootElement = document.getElementById("root");
 ReactDOM.render(<App />, rootElement);
 ```
 
-[codesandbox example](https://codesandbox.io/embed/o7o2yz08yq?autoresize=1&fontsize=12&hidenavigation=1)
+[![Edit kx3wow4wmr](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/kx3wow4wmr?autoresize=1&fontsize=13&hidenavigation=1&moduleview=1)
 
 ### Debounce props
 
