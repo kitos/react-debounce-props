@@ -1,0 +1,43 @@
+{
+  "name": "react-debounce-props",
+  "version": "1.0.0",
+  "description": "Render-prop component for props debouncing",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "README.md",
+    "index.js",
+    "index.d.ts",
+    "cjs/",
+    "umd/"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kitos/react-debounce-props.git"
+  },
+  "keywords": [
+    "react",
+    "render-props",
+    "debounce"
+  ],
+  "author": "Nikita Kirsanov <kitos.kirsanov@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kitos/react-debounce-props/issues"
+  },
+  "homepage": "https://github.com/kitos/react-debounce-props#readme",
+  "dependencies": {
+    "lodash.debounce": "^4.0.8"
+  },
+  "devDependencies": {
+    "@types/lodash.debounce": "^4.0.4",
+    "@types/react": "^16.4.18",
+    "jest": "^23.6.0",
+    "prettier": "^1.14.3",
+    "typescript": "^3.1.3"
+  }
+}
