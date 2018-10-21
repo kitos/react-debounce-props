@@ -15,7 +15,9 @@
     "umd/"
   ],
   "scripts": {
-    "build": "rollup -c",
+    "release": "npm run build && npm version patch && npm publish && git push --tags",
+    "build": "npm run clean && rollup -c",
+    "clean": "rm -rf dist coverage",
     "test": "jest"
   },
   "repository": {
@@ -47,6 +49,7 @@
     "prettier": "^1.14.3",
     "react": "^16.5.2",
     "react-test-renderer": "^16.5.2",
+    "rimraf": "^2.6.2",
     "rollup": "^0.66.6",
     "rollup-plugin-commonjs": "^9.2.0",
     "rollup-plugin-node-resolve": "^3.4.0",
