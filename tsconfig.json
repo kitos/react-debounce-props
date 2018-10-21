@@ -6,7 +6,7 @@
     "target": "es2015",
     "outDir": "dist",
     "declaration": true,
-    "jsx": "preserve"
+    "jsx": "react"
   },
   "include": ["src/**/*"]
 }
