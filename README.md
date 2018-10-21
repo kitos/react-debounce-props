@@ -3,13 +3,16 @@
 [![Build Status](https://travis-ci.com/kitos/react-debounce-props.svg?branch=master)](https://travis-ci.com/kitos/react-debounce-props)
 [![codecov](https://codecov.io/gh/kitos/react-debounce-props/branch/master/graph/badge.svg)](https://codecov.io/gh/kitos/react-debounce-props)
 
+[![npm bundle size (minified)](https://img.shields.io/bundlephobia/min/react.svg)](https://unpkg.com/react-debounce-props)
+[![npm bundle size (minified + gzip)](https://img.shields.io/bundlephobia/minzip/react.svg)](https://unpkg.com/react-debounce-props)
+
 Tiny render-prop component for props debouncing
 
 ## Install
 
 ### Using npm
 
-`npm i 'react-debounce-props' --save`
+`npm i react-debounce-props --save`
 
 Then, use it as usual:
 
@@ -23,7 +26,7 @@ const { Debounce } = require('react-debounce-props')
 
 ### 1998 Script Tag (UMD build)
 
-The UMD build is also available on [unpkg][unpkg]:
+The UMD build is also available on [unpkg](https:/unpkg.com):
 
 ```HTML
 <script src="https://unpkg.com/react@16.4.1/umd/react.production.min.js"></script>
