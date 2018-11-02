@@ -22,11 +22,15 @@ export class Debounce<T extends Object> extends React.PureComponent<DebounceProp
   }
 }
 
-export let withDebouncedProps = (props, wait: number) => Component =>
-  class DebounceHOC extends React.PureComponent {
-    render() {
-      return <Debounce {...{ ...props, wait }}>{debouncedProps => <Component {...debouncedProps} />}</Debounce>
+export function withDebouncedProps<T extends Object>(props: T, wait: number) {
+  return (Component: React.ComponentType<T>) =>
+    class DebounceHOC extends React.PureComponent {
+      render() {
+        return (
+          <Debounce {...{ ...(props as Object), wait }}>{debouncedProps => <Component {...debouncedProps} />}</Debounce>
+        )
+      }
     }
-  }
+}
 
 export default Debounce

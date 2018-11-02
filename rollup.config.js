@@ -1,7 +1,7 @@
 import resolve from 'rollup-plugin-node-resolve'
 import commonjs from 'rollup-plugin-commonjs'
 import { uglify } from 'rollup-plugin-uglify'
-import typescript from 'rollup-plugin-typescript'
+import typescript from 'rollup-plugin-typescript2'
 import pkg from './package.json'
 
 export default [
@@ -13,14 +13,15 @@ export default [
       file: pkg.browser,
       format: 'umd',
       exports: 'named',
+      globals: {
+        react: 'React',
+      },
     },
     external: ['react'],
     plugins: [
       resolve(), // so Rollup can find `ms`
       commonjs(), // so Rollup can convert `ms` to an ES module
-      typescript({
-        target: 'es5',
-      }),
+      typescript(),
       uglify(),
     ],
   },
@@ -34,7 +35,11 @@ export default [
   {
     input: 'src/index.tsx',
     external: ['react', 'lodash.debounce'],
-    plugins: [typescript()],
+    plugins: [typescript({
+      tsconfigOverride: {
+        target: 'es2015',
+      },
+    })],
     output: [{ file: pkg.main, format: 'cjs' }, { file: pkg.module, format: 'es' }],
   },
 ]
