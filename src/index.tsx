@@ -8,8 +8,6 @@ export type DebounceProps<T> = T & {
 
 export class Debounce<T extends Object> extends React.PureComponent<DebounceProps<T>, T> {
   debouncedSetState = debounce(this.setState, this.props.wait)
-  // @ts-ignore
-  memoizedChildren = React.memo(this.props.children)
 
   componentDidUpdate() {
     // had to cast to any because of https://github.com/Microsoft/TypeScript/issues/10727
@@ -20,8 +18,7 @@ export class Debounce<T extends Object> extends React.PureComponent<DebounceProp
   render() {
     // had to cast to any because of https://github.com/Microsoft/TypeScript/issues/10727
     const { children, wait, ...propsToDebounce } = this.props as any
-    let MemoizedChildren = this.memoizedChildren
-    return <MemoizedChildren {...this.state || (propsToDebounce as T)} />
+    return children(this.state || (propsToDebounce as T))
   }
 }
 
