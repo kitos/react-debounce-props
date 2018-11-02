@@ -35,6 +35,9 @@
   "dependencies": {
     "lodash.debounce": "^4.0.8"
   },
+  "peerDependencies": {
+    "react": "^16.6.0"
+  },
   "devDependencies": {
     "@types/jest": "^23.3.5",
     "@types/lodash.debounce": "^4.0.4",
@@ -43,8 +46,8 @@
     "@types/react-test-renderer": "^16.0.3",
     "jest": "^23.6.0",
     "prettier": "^1.14.3",
-    "react": "^16.5.2",
-    "react-test-renderer": "^16.5.2",
+    "react": "^16.6.0",
+    "react-test-renderer": "^16.6.0",
     "rimraf": "^2.6.2",
     "rollup": "^0.66.6",
     "rollup-plugin-commonjs": "^9.2.0",
