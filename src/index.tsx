@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { useEffect, useState } from 'react'
 import debounce from 'lodash.debounce'
 
 export type DebounceProps<T> = T & {
@@ -31,6 +32,18 @@ export function withDebouncedProps<T extends Object>(props: T, wait: number) {
         )
       }
     }
+}
+
+export function useDebounce<T>(value: T, wait = 0): T {
+  let [debouncedValue, setDebouncedValue] = useState(value)
+
+  useEffect(() => {
+    let tid = setTimeout(() => setDebouncedValue(value), wait)
+
+    return () => clearTimeout(tid)
+  })
+
+  return debouncedValue
 }
 
 export default Debounce
