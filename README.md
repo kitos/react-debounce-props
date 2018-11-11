@@ -6,7 +6,7 @@
 [![npm bundle size (minified)](https://img.shields.io/bundlephobia/min/react.svg)](https://unpkg.com/react-debounce-props)
 [![npm bundle size (minified + gzip)](https://img.shields.io/bundlephobia/minzip/react.svg)](https://unpkg.com/react-debounce-props)
 
-Tiny render-prop component for props debouncing
+Tiny render-prop/HOC/hook component for props/state debouncing
 
 ## Install
 
@@ -37,7 +37,45 @@ The package is avalable on `window.ReactDebounceProps`
 
 ## Usage
 
-### Debounce state
+### Hook
+
+```JS
+import React, { useState } from "react";
+import ReactDOM from "react-dom";
+import { useDebounce } from "react-debounce-props";
+
+let App = () => {
+  let [value, setValue] = useState("");
+  let debouncedValue = useDebounce(value, 250);
+
+  return (
+    <div className="App">
+      <input
+        value={value}
+        onChange={e => setValue(e.target.value)}
+        placeholder="Type smth..."
+      />
+
+      <div>
+        Normal value: <b>{value}</b>
+      </div>
+
+      <div>
+        Debounced value: <b>{debouncedValue}</b>
+      </div>
+    </div>
+  );
+};
+
+const rootElement = document.getElementById("root");
+ReactDOM.render(<App />, rootElement);
+```
+
+[![Edit debounce-input](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/0483602w5l?autoresize=1&hidenavigation=1)
+
+### render-prop
+
+#### Debounce state
 
 This lib can easily replace [react-debounce-input](https://github.com/nkbt/react-debounce-input) cause it is more generic.
 
@@ -81,7 +119,7 @@ ReactDOM.render(<App />, rootElement);
 
 [![Edit kx3wow4wmr](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/kx3wow4wmr?autoresize=1&fontsize=13&hidenavigation=1&moduleview=1)
 
-### Debounce props
+#### Debounce props
 
 You can also debounce props passed from parent components:
 
