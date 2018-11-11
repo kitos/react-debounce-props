@@ -21,6 +21,10 @@ export class Debounce<T extends Object> extends React.PureComponent<DebounceProp
     }, wait)
   }
 
+  componentWillUnmount() {
+    this.clearTimeout()
+  }
+
   clearTimeout() {
     clearTimeout(this.tid)
     this.tid = null
