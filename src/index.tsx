@@ -37,15 +37,23 @@ export class Debounce<T extends Object> extends React.PureComponent<DebounceProp
   }
 }
 
-export function withDebouncedProps<T extends Object>(props: T, wait: number) {
-  return (Component: React.ComponentType<T>) =>
-    class DebounceHOC extends React.PureComponent {
-      render() {
-        return (
-          <Debounce {...{ ...(props as Object), wait }}>{debouncedProps => <Component {...debouncedProps} />}</Debounce>
-        )
-      }
-    }
+export function withDebouncedProps<T extends Object>(keysToDebounce: (keyof T)[], wait: number) {
+  return (Component: React.ComponentType<T & { debounced: T }>) => (ownProps: T) => {
+    let propsToDebounce = keysToDebounce.reduce(
+      (res, key) => {
+        res[key] = ownProps[key]
+
+        return res
+      },
+      {} as T,
+    )
+
+    return (
+      <Debounce<T> {...propsToDebounce} wait={wait}>
+        {debouncedProps => <Component {...ownProps} debounced={debouncedProps} />}
+      </Debounce>
+    )
+  }
 }
 
 export function useDebounce<T>(value: T, wait = 0): T {

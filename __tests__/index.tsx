@@ -15,8 +15,8 @@ describe('index', () => {
   })
 
   describe('HOC', () => {
-    let HOCed = withDebouncedProps({ test: 42 }, 0)(({ test }) => <div>{test}</div>)
+    let HOCed = withDebouncedProps(['test'], 0)(({ debounced: { test } }) => <div>{test}</div>)
 
-    it('should render at least', () => expect(create(<HOCed />).toJSON()).toMatchSnapshot())
+    it('should render at least', () => expect(create(<HOCed test={42} />).toJSON()).toMatchSnapshot())
   })
 })
