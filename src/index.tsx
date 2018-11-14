@@ -7,7 +7,7 @@ export type DebounceProps<T> = T & {
 }
 
 export class Debounce<T extends Object> extends React.PureComponent<DebounceProps<T>, T> {
-  tid: number = null
+  tid: any = null
 
   componentDidUpdate() {
     // had to cast to any because of https://github.com/Microsoft/TypeScript/issues/10727
@@ -59,11 +59,14 @@ export function withDebouncedProps<T extends Object>(keysToDebounce: (keyof T)[]
 export function useDebounce<T>(value: T, wait = 0): T {
   let [debouncedValue, setDebouncedValue] = useState(value)
 
-  useEffect(() => {
-    let tid = setTimeout(() => setDebouncedValue(value), wait)
+  useEffect(
+    () => {
+      let tid = setTimeout(() => setDebouncedValue(value), wait)
 
-    return () => clearTimeout(tid)
-  })
+      return () => clearTimeout(tid)
+    },
+    [value],
+  )
 
   return debouncedValue
 }
