@@ -1,5 +1,3 @@
-import resolve from 'rollup-plugin-node-resolve'
-import commonjs from 'rollup-plugin-commonjs'
 import { uglify } from 'rollup-plugin-uglify'
 import typescript from 'rollup-plugin-typescript2'
 import pkg from './package.json'
@@ -19,8 +17,6 @@ export default [
     },
     external: ['react'],
     plugins: [
-      resolve(), // so Rollup can find `ms`
-      commonjs(), // so Rollup can convert `ms` to an ES module
       typescript(),
       uglify(),
     ],
