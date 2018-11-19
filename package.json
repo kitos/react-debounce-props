@@ -24,7 +24,8 @@
   "keywords": [
     "react",
     "render-props",
-    "debounce"
+    "debounce",
+    "hooks"
   ],
   "author": "Nikita Kirsanov <kitos.kirsanov@gmail.com>",
   "license": "MIT",

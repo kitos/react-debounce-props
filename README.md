@@ -3,8 +3,8 @@
 [![Build Status](https://travis-ci.com/kitos/react-debounce-props.svg?branch=master)](https://travis-ci.com/kitos/react-debounce-props)
 [![codecov](https://codecov.io/gh/kitos/react-debounce-props/branch/master/graph/badge.svg)](https://codecov.io/gh/kitos/react-debounce-props)
 
-[![npm bundle size (minified)](https://img.shields.io/bundlephobia/min/react.svg)](https://unpkg.com/react-debounce-props)
-[![npm bundle size (minified + gzip)](https://img.shields.io/bundlephobia/minzip/react.svg)](https://unpkg.com/react-debounce-props)
+[![npm bundle size (minified)](https://img.shields.io/bundlephobia/min/react.svg?style=for-the-badge)](https://unpkg.com/react-debounce-props@1.0.0/dist/umd/react-debounce-props.js)
+[![npm bundle size (minified + gzip)](https://img.shields.io/bundlephobia/minzip/react.svg?style=for-the-badge)](https://unpkg.com/react-debounce-props@1.0.0/dist/umd/react-debounce-props.js)
 
 Tiny render-prop/HOC/hook component for props/state debouncing
 
