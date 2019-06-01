@@ -70,5 +70,3 @@ export function useDebounce<T>(value: T, wait = 0): T {
 
   return debouncedValue
 }
-
-export default Debounce
