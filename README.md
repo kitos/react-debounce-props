@@ -3,8 +3,8 @@
 [![Build Status](https://travis-ci.com/kitos/react-debounce-props.svg?branch=master)](https://travis-ci.com/kitos/react-debounce-props)
 [![codecov](https://codecov.io/gh/kitos/react-debounce-props/branch/master/graph/badge.svg)](https://codecov.io/gh/kitos/react-debounce-props)
 
-[![npm bundle size (minified)](http://img.badgesize.io/https://unpkg.com/react-debounce-props@1.0.0/dist/umd/react-debounce-props.js?style=for-the-badge)](https://unpkg.com/react-debounce-props@1.0.0/dist/umd/react-debounce-props.js)
-[![npm bundle size (minified + gzip)](http://img.badgesize.io/https://unpkg.com/react-debounce-props@1.0.0/dist/umd/react-debounce-props.js?compression=gzip&label=gzip%20size&style=for-the-badge)](https://unpkg.com/react-debounce-props@1.0.0/dist/umd/react-debounce-props.js)
+[![npm bundle size (minified)](http://img.badgesize.io/https://unpkg.com/react-debounce-props?style=for-the-badge)](https://unpkg.com/react-debounce-props)
+[![npm bundle size (minified + gzip)](http://img.badgesize.io/https://unpkg.com/react-debounce-props?compression=gzip&label=gzip%20size&style=for-the-badge)](https://unpkg.com/react-debounce-props)
 
 Tiny render-prop/HOC/hook component for props/state debouncing
 
