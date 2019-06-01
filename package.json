@@ -1,6 +1,6 @@
 {
   "name": "react-debounce-props",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Render-prop component for props debouncing",
   "main": "dist/react-debounce-props.js",
   "module": "dist/react-debounce-props.mjs",
